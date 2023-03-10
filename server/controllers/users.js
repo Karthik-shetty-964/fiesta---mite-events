@@ -1,7 +1,8 @@
-import User from "../models/User";
-import Event from "../models/Event";
+import User from "../models/User.js";
+import Event from "../models/Event.js";
 
 // read
+// getting user details for the profile page from the database.
 export const getUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -12,6 +13,8 @@ export const getUser = async (req, res) => {
   }
 };
 
+
+// getting the regiseterd events data of the user from the backend.
 export const getRegisteredEvents = async (req, res) => {
   try {
     const { id } = req.params;
@@ -57,6 +60,7 @@ export const getRegisteredEvents = async (req, res) => {
 
 
 // update
+// registering and unregistering from the event.
 export const registerUnregisterForEvent = async (req, res)=>{
     try{
         const {id, eventId} = req.params;
